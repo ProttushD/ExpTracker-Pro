@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.login-main {
+    width: 100%;
+    height: 100%;
+    background-color: #F4F7F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-main .login-box {
+    width: 30vw;
+
+    background-color: #fff;
+    padding: 40px;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+    border-radius: 10px;
+
+    border-radius:16px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    border:1px solid #ececec;
+}
+
+.login-main .login-box h1 {
+    font-weight: 400;
+    font-size: 2.5vw;
+
+}
+
+.login-main .login-box p {
+    font-weight: 100;
+    color: #8a8a8a;
+    font-size: 1.2vw;
+}
+
+.login-main .login-box form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.login-main .login-box form label {
+
+    font-weight: 500;
+    font-size: 1.2vw;
+}
+
+
+.login-main .login-box form input {
+    height: 3vw;
+    border-radius: 10px;
+    border: .5px solid #dadada;
+    padding: 0 5px;
+    font-size: 15px;
+
+    outline: none;
+    transition: .3s ease;
+}
+
+.login-main .login-box form input:focus {
+    border: 1px solid darkred;
+}
+
+/* Form Buttton  Start*/
+
+.form-btn {
+    background-color: darkred;
+    color: #fff;
+    padding: 1.5vh;
+    transition: all ease .5s;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 1.3vw;
+    position: relative;
+    overflow: hidden;
+
+
+
+}
+
+.form-btn:hover {
+    cursor: pointer;
+}
+
+
+
+.form-btn::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+    background-color: #000;
+    z-index: 1;
+    transition: all ease .5s;
+
+}
+
+.form-btn:hover::after {
+    width: 100%;
+
+}
+
+.form-btn span {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+
+.hp-link {
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    transition: all ease .5s;
+}
+
+.hp-link:hover {
+    color: darkred;
+}
+
+
+
+.hp-link::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    color: #000;
+    background-color: #000;
+    transition: all ease .5s;
+}
+
+.hp-link:hover::after {
+    width: 100%;
+    background-color: darkred;
+}
+
+
+
+/* Form Buttton  End*/
+
+
+@media (max-width: 768px) {
+
+    .login-main .login-box {
+        width: 60vh;
+        gap: 10px;
+    }
+
+    .login-main .login-box h1 {
+        font-weight: 400;
+        font-size: 4vh;
+    }
+
+    .login-main .login-box p {
+        font-size: 2vh;
+        text-align: center;
+    }
+
+    .login-main .login-box form label {
+        font-size: 2vh;
+    }
+
+    .login-main .login-box form input {
+        height: 6vh;
+
+    }
+
+    .form-btn {
+        font-size: 1.8vh;
+
+    }
+
+
+}
