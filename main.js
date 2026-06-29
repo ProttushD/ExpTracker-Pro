@@ -4,6 +4,10 @@ loginMain.classList.add("login-main");
 const loginBox = document.createElement("div");
 loginBox.classList.add("login-box")
 
+const img = document.createElement("img");
+img.src="./images/ft-favicon.png";
+img.style.width = "100px";
+
 const h1 = document.createElement("h1");
 h1.textContent = "Welcome Back";
 
@@ -49,6 +53,7 @@ a.textContent = " Register here"
 
 document.body.append(loginMain);
 loginMain.append(loginBox);
+loginBox.append(img);
 loginBox.append(h1);
 loginBox.append(p);
 loginBox.append(form);
@@ -130,19 +135,101 @@ showLogin();
 
 
 
+// const users = [
+//     {
+//         username: "prottush",
+//         password: "123456"
+//     },
+//     {
+//         username: "rahul",
+//         password: "abcdef"
+//     }
+// ];
+
+let users = JSON.parse(localStorage.getItem("users")) || []; // this will help to get the users form local storage 
+
 
 
 form.addEventListener("submit", (e) => {
 
     e.preventDefault();
 
-    const username = input.value;
-    const password = pasInput.value;
-
-
-    console.log(username);
-    console.log(password);
+    if (isLogin) {
+        login();
+    }
+    else {
+        register();
+    }
 
     input.value = "";
     pasInput.value = "";
-})
+
+});
+
+
+function login() {
+
+
+    const username = input.value.trim();
+    const password = pasInput.value.trim();
+
+    const foundUser = users.find((user) => {
+        return user.username === username;
+    });
+
+    if (!foundUser) {
+        alert("User doesn't exist. Please register.");
+        return;
+    }
+
+    if (foundUser.password !== password) {
+        alert("Incorrect Password");
+        return;
+    }
+
+    alert("Login Successful");
+
+    window.location.href = "dashboard.html";
+}
+
+
+
+
+function register() {
+
+
+    const username = input.value.trim();
+    const password = pasInput.value.trim();
+
+
+    const userExists = users.some((user) => {
+        return user.username === username;
+
+    });
+
+
+    if (userExists) {
+        alert("Username already exists");
+        return;
+
+    }
+
+
+    const user = { // this will help in creating new users 
+        username,
+        password
+    };
+
+
+    users.push(user); //new udders are added into array 
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    console.log(users);
+
+    alert("Registration Successful");
+
+    showLogin();
+
+
+}
