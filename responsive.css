@@ -1,0 +1,79 @@
+@media (max-width: 768px) {
+
+    .login-main .login-box {
+        width: 60vh;
+        gap: 10px;
+    }
+
+    .login-main .login-box h1 {
+        font-weight: 400;
+        font-size: 4vh;
+    }
+
+    .login-main .login-box p {
+        font-size: 2vh;
+        text-align: center;
+    }
+
+    .login-main .login-box form label {
+        font-size: 2vh;
+    }
+
+    .login-main .login-box form input {
+        height: 6vh;
+
+    }
+
+    .form-btn {
+        font-size: 1.8vh;
+
+    }
+
+
+
+    .sidebar{
+        display: none;
+    }
+
+    .dashboard-main  .dashboard-nav .dash-right{
+    
+    justify-content: space-between;
+    gap: 20px;
+
+    }
+
+   .dashboard-main .dashboard-nav .dash-left .dash-logo{
+    
+    display: block;
+}
+
+.dashboard-main .dashboard-nav .dash-right .b-menu {
+  
+   display: block;
+}
+
+
+.dashboard-main .dashboard-nav .dash-right .user h5{
+    display: none;
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
